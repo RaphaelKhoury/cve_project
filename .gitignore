@@ -28,3 +28,4 @@ Thumbs.db
 # Ignorer les fichiers JSON lourds
 src/data/*.json
 
+src/data/
