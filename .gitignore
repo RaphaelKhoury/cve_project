@@ -25,3 +25,6 @@ data/
 # Système
 .DS_Store
 Thumbs.db
+# Ignorer les fichiers JSON lourds
+src/data/*.json
+
