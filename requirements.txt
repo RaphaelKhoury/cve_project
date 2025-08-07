@@ -1,0 +1,7 @@
+requests
+pandas
+openpyxl
+requests
+psycopg2-binary
+tqdm
+

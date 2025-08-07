@@ -1,0 +1,27 @@
+# Environnement virtuel Python
+.venv/
+__pycache__/
+*.pyc
+
+# Données volumineuses
+data/
+*.gz
+*.json
+*.db
+*.log
+
+# Fichiers de configuration sensibles
+.env
+
+# Cache et fichiers temporaires
+*.log
+*.sqlite
+*.tmp
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Système
+.DS_Store
+Thumbs.db
