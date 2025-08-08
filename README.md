@@ -55,8 +55,7 @@ cd cve_project
 ### 2- Install PostgreSQL
 
 1. **Download and install PostgreSQL**  
-
-   - [Windows](https://www.postgresql.org/download/windows/)  
+   - Windows: https://www.postgresql.org/download/windows/
 
 2. **Create the database**  
    ```bash
@@ -85,7 +84,7 @@ pip install -r requirements.txt
 
 ### 5- Configure the `.env` file
 
-Create a `.env` file at the root of the project with your settings:
+Create a `.env` file at the project root with your settings:
 
 ```
 DB_HOST=localhost
@@ -96,6 +95,22 @@ DB_PASSWORD=admin12
 
 NVD_API_KEY=4a35f378-39a5-418b-9ac1-50d3cd077174
 ```
+
+---
+
+## 🗃️ Database Setup
+
+### Option A — Use the provided `schema.sql` 
+
+1. Download `schema.sql` from the repo (or from the link below).  
+2. Run:
+   ```bash
+   psql -U postgres -d cve_db -f schema.sql
+   ```
+
+### Option B — Inline SQL (copy/paste)
+
+If you prefer to paste directly in `psql`, use the SQL block in **schema.sql** (same content).
 
 ---
 
@@ -146,4 +161,4 @@ This project is an academic work. Free to use for educational purposes.
 ## 📬 Contact
 
 **Developed by:** Fatoumata Diallo  
-**GitHub:** [https://github.com/fatoumata256](https://github.com/fatoumata256)
+**GitHub:** https://github.com/fatoumata256
