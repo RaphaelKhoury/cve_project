@@ -1,6 +1,6 @@
 # CVE Project - NVD Vulnerabilities
 
-Ce projet est une solution complète pour la gestion et l'analyse des vulnérabilités CVE issues de la NVD. Il permet de :
+Ce projet est une solution pour la gestion et l'analyse des vulnérabilités CVE issues de la NVD. Il permet de :
 
 - **Télécharger** les fichiers CVE depuis le NVD (JSON).
 - **Extraire** toutes les données importantes (description, CVSS, CWE, CPE, etc.).
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 
 Configuration – Fichier .env
 
-Créez un fichier .env à la racine du projet pour stocker vos informations de configuration locales. Ce fichier est ignoré par Git.
+Créez un fichier .env à la racine du projet pour stocker les informations de configuration locales. 
 
 DB_HOST=localhost
 DB_PORT=5432
