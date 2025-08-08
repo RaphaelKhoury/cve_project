@@ -15,13 +15,13 @@ L'historique des changements est stocké dans la base de données PostgreSQL sou
 
 CVE_PROJECT/
 ├── src/
-│ ├── downloader.py             # Téléchargement des fichiers JSON.gz
-│ ├── extractor.py              # Extraction des données CVE depuis les fichiers
-│ ├── importer_cve.py           # Insertion des CVE dans PostgreSQL
-│ ├── importer_change_history.py # Récupération de l’historique d’une liste de CVE (API)
-│ ├── import_allchangement.py   # Insertion de l’historique de changements pour plusieurs CVE
-│ ├── config.py                 # Paramètres généraux (clé API, DB)
-│ └── db.py                     # Connexion à la base PostgreSQL
+│   ├── downloader.py             # Téléchargement des fichiers JSON.gz
+│   ├── extractor.py              # Extraction des données CVE depuis les fichiers
+│   ├── importer_cve.py           # Insertion des CVE dans PostgreSQL
+│   ├── importer_change_history.py # Récupération de l’historique d’une liste de CVE (API)
+│   ├── import_allchangement.py   # Insertion de l’historique de changements pour plusieurs CVE
+│   ├── config.py                 # Paramètres généraux (clé API, DB)
+│   └── db.py                     # Connexion à la base PostgreSQL
 ├── data/                       # Données JSON extraites et historiques
 ├── .env                        # Clé API NVD et configuration DB
 ├── .gitignore
