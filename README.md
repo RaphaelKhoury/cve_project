@@ -99,20 +99,18 @@ NVD_API_KEY=4a35f378-39a5-418b-9ac1-50d3cd077174
 ---
 
 ## 🗃️ Database Setup
+Option A — Use the provided schema.sql
 
-### Option A — Use the provided `schema.sql` 
+    Download schema.sql from the repo (located in the src/ folder).
 
-1. Download `schema.sql` from the repo (or from the link below).  
-2. Run:
-   ```bash
-   psql -U postgres -d cve_db -f schema.sql
-   ```
+    Run:
 
-### Option B — Inline SQL (copy/paste)
+psql -U postgres -d cve_db -f src/schema.sql
 
-If you prefer to paste directly in `psql`, use the SQL block in **schema.sql** (same content).
+Option B — Inline SQL (copy/paste)
 
----
+    Copy the SQL block from schema.sql (same content). 
+
 
 ## 🚀 Using the scripts
 
