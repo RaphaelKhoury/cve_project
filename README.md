@@ -103,9 +103,7 @@ Option A — Use the provided schema.sql
 
     Download schema.sql from the repo (located in the src/ folder).
 
-    Run:
-
-psql -U postgres -d cve_db -f src/schema.sql
+    Run: psql -U postgres -d cve_db -f src/schema.sql
 
 Option B — Inline SQL (copy/paste)
 
