@@ -139,6 +139,10 @@ python src/importer_change_history.py CVE-2021-44228
 python src/import_allchangement.py
 ```
 
+Connect to db with : 
+psql -U postgres -d cve_db
+
+
 ---
 
 ## 📦 Main dependencies
