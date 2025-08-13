@@ -128,6 +128,8 @@ Modify importer_cve.py so to have the correct password for your DB.
 python src/importer_cve.py
 ```
 
+****optional, include changes to CVEs in the DB****
+
 **Retrieve the history of a CVE via the API**  
 (The CVE number is the one for which you want the changse)
 ```bash
@@ -142,6 +144,40 @@ python src/import_allchangement.py
 Connect to db with : 
 psql -U postgres -d cve_db
 
+---
+Sample requests
+
+
+1.Check if a CVE is in the DB
+SELECT * FROM cve WHERE cve_id = 'CVE-2024-25694';
+
+2.Description for a given CVE
+SELECT lang, description FROM cve_description WHERE cve_id = 'CVE-2024-25694'; 
+3. List references for a CVE.
+ SELECT r.url, r.source, r.tags FROM cve_reference cr JOIN reference r ON cr.reference_id = r.id WHERE cr.cve_id = 'CVE-2024-25694';
+
+4. Show CVSS scrores for a CVE 
+SELECT cve_id,version, base_score, base_severity, vector_string, attack_vector, attack_complexity, privileges_required, user_interaction, scope, confidentiality_impact, integrity_impact, availability_impact FROM cvss WHERE cve_id = 'CVE-2024-25694';
+5. Show  CWE for a CVE 
+SELECT cc.cve_id, cc.cwe_id FROM cve_cwe cc WHERE cc.cve_id = 'CVE-2024-25694';
+
+6. Show CPE for a CVE
+ SELECT c. vendor, c. product, c.version, c.criteria, c.vulnerable FROM cve_cpe_match cm JOIN cpe_match c ON cm.cpe_match_id = c.id WHERE cm.cve_id = 'CVE-2024-25694';
+7. Show all changes (if the scripts for changes have been run )
+SELECT cve_id, published, last_modified FROM cve ORDER BY last_modified DESC LIMIT 20;
+
+8. List a CVE with its vendors 
+ SELECT cm.cve_id, c.vendor, c.product FROM cve_cpe_match cm JOIN cpe_match c ON cm.cpe_match_id = c.id WHERE cm.cve_id = 'CVE-2021-44228' ORDER BY c.vendor, c.product;
+
+9. List all changes for a CVE. 
+ SELECT * FROM cve_change_history WHERE cve_id = 'CVE-2021-44228' ORDER BY change_date DESC;
+10. Find all CVEs modified during a given time period
+ SELECT DISTINCT cve_id FROM cve_change_history WHERE change_date BETWEEN '2025-01- 01' AND '2025-01-31';
+
+11. Status of a CVE from 2010 with the organisation that submitted it. 
+ SELECT cve_id, source_identifier, vuln_status FROM cve WHERE cve_id LIKE 'CVE-2010-%' AND vuln_status IS NOT NULL ORDER BY cve_id LIMIT 20;
+12. Count the number of changs by type 
+ SELECT action, COUNT (*) FROM cve_change_history GROUP BY action.
 
 ---
 
