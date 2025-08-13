@@ -123,11 +123,13 @@ python src/extractor.py
 ```
 
 **Insert CVEs into PostgreSQL**  
+Modify importer_cve.py so to have the correct password for your DB.
 ```bash
 python src/importer_cve.py
 ```
 
 **Retrieve the history of a CVE via the API**  
+(The CVE number is the one for which you want the changse)
 ```bash
 python src/importer_change_history.py CVE-2021-44228
 ```
